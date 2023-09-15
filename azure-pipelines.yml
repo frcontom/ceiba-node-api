@@ -1,18 +1,11 @@
+triger:
+  - master
+
 pool:
-  vmImage: ubuntu-20.04
+  vmImage: ubuntu-latest
 
 strategy:
   matrix:
-    'Node 6':
-      versionSpec: '6.x'
-    'Node 8':
-      versionSpec: '8.x'
-    'Node 10':
-      versionSpec: '10.x'
-    'Node 12':
-      versionSpec: '12.x'
-    'Node 14':
-      versionSpec: '14.x'
     'Node 16':
       versionSpec: '16.x'
 
