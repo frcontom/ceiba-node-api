@@ -8,8 +8,14 @@ trigger:
 
 stages:
   - stage: A
-
-    
+    jobs:
+      - job: A1
+        steps:
+          - script: echo A1
+      - job: A2
+        steps:
+          - script: echo A2
+            
 pool:
   vmImage: ubuntu-latest
 
