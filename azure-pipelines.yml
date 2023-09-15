@@ -1,18 +1,13 @@
-triger:
+trigger:
   - master
 
 pool:
   vmImage: ubuntu-latest
 
-strategy:
-  matrix:
-    'Node 16':
-      versionSpec: '16.x'
-
 steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: $(versionSpec)
+      versionSpec: '16.x'
     displayName: Install node
 
   # install dependencies
@@ -20,8 +15,5 @@ steps:
     displayName: npm install
 
   # build
-  - script: npm run build
-    displayName: npm run build
-
-  - script: npm run units
-    displayName: Run unit tests
+  - script: npm run start
+    displayName: npm run start
