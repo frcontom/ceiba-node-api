@@ -9,30 +9,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-  strategy:
-    matrix:
-      node_6_x:
-        node_version: '6.x'
-      node_8_x:
-        node_version: '8.x'
-      node_10_x:
-        node_version: '10.x'
-      node_12_x:
-        node_version: '12.x'
-      node_14_x:
-        node_version: '14.x'
-      node_15_x:
-        node_version: '15.x'
-
   Steps: 
   - task: NodeTool@0
     inputs:
-      versionSpec: $(versionSpec)
-      displayName: Install node
+      versionSpec: '6.x'
+      displayName: 'Install node.js'
 
 # install dependencies
   - script: npm install
     displayName: npm install
+
+  - script: npm run build
+    displayName: 'npm build'
 
 #steps:
 #- script: echo Hello, world!
