@@ -9,6 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+  Steps: 
+  - task: NodeTool@0
+    inputs:
+      versionSource: 'spec'
+      versionSpec: '6.x'
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
