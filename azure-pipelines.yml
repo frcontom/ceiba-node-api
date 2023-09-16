@@ -9,4 +9,3 @@ steps:
     inputs:
       versionSpec: '16.x'
     displayName: 'Install node'
-    checkLatest: true
